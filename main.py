@@ -33,6 +33,7 @@ def main():
         # draw screen
         pygame.Surface.fill(screen, (0, 0, 0))
         # draw characters
+        player.update(dt)
         player.draw(screen)
         # render
         pygame.display.flip()
