@@ -1,3 +1,4 @@
+import sys
 import pygame
 from constants import (
     SCREEN_WIDTH,
@@ -42,6 +43,10 @@ def main():
 
         for u in updatable:
             u.update(dt)
+
+        for a in asteroids:
+            if player.check_collision(a):
+                sys.exit("Game over!")
 
         # draw screen
         pygame.Surface.fill(screen, (0, 0, 0))
