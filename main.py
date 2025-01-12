@@ -50,6 +50,10 @@ def main():
         for a in asteroids:
             if player.check_collision(a):
                 sys.exit("Game over!")
+            for s in shots:
+                if s.check_collision(a):
+                    s.kill()
+                    a.split()
 
         # draw screen
         pygame.Surface.fill(screen, (0, 0, 0))
